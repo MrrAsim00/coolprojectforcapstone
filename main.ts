@@ -1,5 +1,5 @@
 let dice = 0
-input.onButtonPressed(Button.AB, function () {
+input.onButtonPressed(Button.AB, function on_button_pressed_ab() {
     for (let index = 0; index < 9; index++) {
         basic.showLeds(`
             . . # . .
@@ -32,7 +32,8 @@ input.onButtonPressed(Button.AB, function () {
         basic.clearScreen()
     }
 })
-input.onGesture(Gesture.Shake, function () {
+input.onGesture(Gesture.Shake, function on_gesture_shake() {
+    
     dice = randint(1, 6)
     if (dice == 1) {
         basic.showString("1")
@@ -47,6 +48,7 @@ input.onGesture(Gesture.Shake, function () {
     } else if (dice == 6) {
         basic.showString("6")
     }
+    
     basic.pause(2000)
     basic.clearScreen()
 })
